@@ -13,7 +13,7 @@ namespace NetCoreCourse
             characterName = "Mike";
             Console.WriteLine("He really liked the name " + characterName);
             Console.WriteLine("But didn't like being " + characterAge);
-
+            Console.WriteLine("Changing the repo from private to public");
             Console.ReadLine();
         }
     }
