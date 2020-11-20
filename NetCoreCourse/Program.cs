@@ -6,18 +6,19 @@ namespace NetCoreCourse
     {
         private static void Main(string[] args)
         {
-            string phrase = "Giraffe Academy";
-            Console.WriteLine("Giraffe\nAcademy");
-            Console.WriteLine("Giraffe\"Academy");
-            Console.WriteLine(phrase);
-            Console.WriteLine(phrase.Length);
-            Console.WriteLine(phrase.ToUpper());
-            Console.WriteLine(phrase.Contains("academy"));
-            Console.WriteLine(phrase[0]);
-            Console.WriteLine(phrase.IndexOf("Academy"));
-            Console.WriteLine(phrase.IndexOf('f'));
-            Console.WriteLine(phrase.Substring(8));
-            Console.WriteLine(phrase.Substring(8, 3));
+            Console.WriteLine(50);
+            Console.WriteLine(50 % 8);
+            Console.WriteLine(4 + 2 * 6);
+            Console.WriteLine(5.1 + 8.1);
+            Console.WriteLine(5 / 2);
+            Console.WriteLine(5 / 2.0);
+            int num = 6;
+            num++;
+            Console.WriteLine(num);
+            Console.WriteLine(Math.Pow(3, 2));
+            Console.WriteLine(Math.Sqrt(36));
+            Console.WriteLine(Math.Max(36,40));
+            Console.WriteLine(Math.Round(36.8));
             Console.ReadLine();
         }
     }
