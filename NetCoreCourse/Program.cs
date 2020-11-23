@@ -5,16 +5,18 @@ namespace NetCoreCourse
     internal class Program
     {
         private static void Main(string[] args)
+
         {
-            Console.Write("Pick a color: ");
-            string color = Console.ReadLine();
-            Console.Write("Pick a noun: ");
-            string pluralNoun = Console.ReadLine();
-            Console.Write("Pick a celebrity: ");
-            string celebrity = Console.ReadLine();
-            Console.WriteLine($"Roses are {color}");
-            Console.WriteLine($"{pluralNoun} are blue");
-            Console.WriteLine($"I Love {celebrity}");
+            Console.Write("What is your name: ");
+            string name = Console.ReadLine(); 
+            SayHi(name);
+            Console.WriteLine();
+            Console.ReadLine();
+        }
+
+        private static void SayHi(string name)
+        {
+            Console.WriteLine($"Hello {name}");
         }
     }
 }
