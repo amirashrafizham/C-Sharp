@@ -6,27 +6,38 @@ namespace NetCoreCourse
     {
         private static void Main(string[] args)
         {
+            double answer;
             Console.Write("Pick your first number: ");
-            int num1 = Convert.ToInt32(Console.ReadLine());
+            double num1 = Convert.ToDouble(Console.ReadLine());
             Console.Write("Pick your first number: ");
-            int num2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(MaxNumber(num1, num2));
-            Console.ReadLine();
-        }
-
-        private static string MaxNumber(int num1, int num2)
-        {
-            string answer;
-            if (num1 > num2)
+            double num2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Pick your operator: ");
+            string op = Console.ReadLine();
+            if (op == "+")
             {
-               answer = $"{num1} is larger than {num2}";
+                answer = num1 + num2;
+                Console.Write($"The addition of {num1} and {num2} is {answer}");
+            }
+            else if (op == "-")
+            {
+                answer = num1 - num2;
+                Console.Write($"The substraction of {num1} and {num2} is {answer}");
+            }
+            else if (op == "*")
+            {
+                answer = num1 * num2;
+                Console.Write($"The multiplication of {num1} and {num2} is {answer}" );
+            }
+            else if (op == "/")
+            {
+                answer = num1 / num2;
+                Console.Write($"The division of {num1} and {num2} is {answer}");
             }
             else
             {
-                answer = $"{num2} is larger than {num1}";
+                Console.Write("You have not entered the right operator");
             }
-
-            return answer; 
+            Console.ReadLine();
         }
     }
 }
