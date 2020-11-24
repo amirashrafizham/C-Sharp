@@ -1,30 +1,32 @@
 ﻿using System;
+
 namespace NetCoreCourse
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
-            bool isMale = false;
-            bool isTall = true;
-            if(isMale && isTall)
+            Console.Write("Pick your first number: ");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Pick your first number: ");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(MaxNumber(num1, num2));
+            Console.ReadLine();
+        }
+
+        private static string MaxNumber(int num1, int num2)
+        {
+            string answer;
+            if (num1 > num2)
             {
-                Console.WriteLine("You are a tall Male");
+               answer = $"{num1} is larger than {num2}";
             }
-            else if (isMale && !isTall)
+            else
             {
-                Console.WriteLine("You are a short Male");
+                answer = $"{num2} is larger than {num1}";
             }
-            else if (!isMale && isTall)
-            {
-                Console.WriteLine("You are not Male but tall");
-            }
-            else 
-            {
-                Console.WriteLine("You are neither tall or male or both");
-            }
-                Console.ReadLine();
+
+            return answer; 
         }
     }
-
 }
