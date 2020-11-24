@@ -5,16 +5,26 @@ namespace NetCoreCourse
     {
         private static void Main(string[] args)
         {
-            Console.Write("Pick a number to find its cubed value: ");
-            double num = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"The cubed value of {num} is {cube(num)}");
-            Console.ReadLine();
-        }
-
-        private static double cube(double num)
-        {
-            double result = num* num* num;
-            return result;
+            bool isMale = false;
+            bool isTall = true;
+            if(isMale && isTall)
+            {
+                Console.WriteLine("You are a tall Male");
+            }
+            else if (isMale && !isTall)
+            {
+                Console.WriteLine("You are a short Male");
+            }
+            else if (!isMale && isTall)
+            {
+                Console.WriteLine("You are not Male but tall");
+            }
+            else 
+            {
+                Console.WriteLine("You are neither tall or male or both");
+            }
+                Console.ReadLine();
         }
     }
+
 }
