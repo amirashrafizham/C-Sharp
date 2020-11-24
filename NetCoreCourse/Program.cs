@@ -6,38 +6,50 @@ namespace NetCoreCourse
     {
         private static void Main(string[] args)
         {
-            double answer;
-            Console.Write("Pick your first number: ");
-            double num1 = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Pick your first number: ");
-            double num2 = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Pick your operator: ");
-            string op = Console.ReadLine();
-            if (op == "+")
-            {
-                answer = num1 + num2;
-                Console.Write($"The addition of {num1} and {num2} is {answer}");
-            }
-            else if (op == "-")
-            {
-                answer = num1 - num2;
-                Console.Write($"The substraction of {num1} and {num2} is {answer}");
-            }
-            else if (op == "*")
-            {
-                answer = num1 * num2;
-                Console.Write($"The multiplication of {num1} and {num2} is {answer}" );
-            }
-            else if (op == "/")
-            {
-                answer = num1 / num2;
-                Console.Write($"The division of {num1} and {num2} is {answer}");
-            }
-            else
-            {
-                Console.Write("You have not entered the right operator");
-            }
+            int dayNum;
+            Console.Write("Insert an integer: ");
+            dayNum = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"It is {GetDay(dayNum)}");
             Console.ReadLine();
+        }
+
+        private static string GetDay(int dayNum)
+        {
+            string dayName;
+            switch (dayNum)
+            {
+                case 0:
+                    dayName = "Sunday";
+                    break;
+
+                case 1:
+                    dayName = "Monday";
+                    break;
+
+                case 2:
+                    dayName = "Tuesday";
+                    break;
+
+                case 3:
+                    dayName = "Wednesday";
+                    break;
+
+                case 4:
+                    dayName = "Thursday";
+                    break;
+
+                case 5:
+                    dayName = "Friday";
+                    break;
+
+                case 6:
+                    dayName = "Saturday";
+                    break;
+                default:
+                    dayName = "Invalid day number";
+                    break;
+            }
+            return dayName;
         }
     }
 }
