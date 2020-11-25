@@ -6,17 +6,31 @@ namespace NetCoreCourse
     {
         private static void Main(string[] args)
         {
-            int index = 6;
-            while (index <= 10)
-            {
-                Console.WriteLine(index);
-                index++;
-            }
+            int actual = 5;
+            GuessNumber(actual);
+            Console.ReadLine();
+        }
+
+        private static void GuessNumber(int actual)
+        {
+            string answer;
+            int guess;
             do
             {
-                Console.WriteLine("You execute first, then check later");
-            } while (index <= 5);
-            Console.ReadLine();
+                Console.Write("Guess a number: ");
+                guess = Convert.ToInt32(Console.ReadLine());
+                if (guess == actual)
+                {
+                    answer = "You are correct";
+                    Console.WriteLine(answer);
+                    break; 
+                }
+                else
+                {
+                    answer = "Try again";
+                    Console.WriteLine(answer);
+                }
+            } while (guess != actual);
         }
     }
 }
