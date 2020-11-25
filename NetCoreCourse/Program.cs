@@ -6,10 +6,32 @@ namespace NetCoreCourse
     {
         private static void Main(string[] args)
         {
-            double count = 1;
-            double end = 3;
-            double actual = 5;
-            GuessNumber(count, end, actual);
+            int counter;
+            int[] arrNumbers = { 4, 8, 15, 16, 23, 42 };
+            string suffix;
+            for (counter = 0; counter < arrNumbers.Length; counter++)
+            {
+                switch (counter)
+                {
+                    case 0:
+                        suffix = "th";
+                        break;
+                    case 1:
+                        suffix = "st";
+                        break;
+                    case 2:
+                        suffix = "nd";
+                        break;
+                    case 3:
+                        suffix = "rd";
+                        break;
+                    default:
+                        suffix = "th";
+                        break;
+                }
+
+                Console.WriteLine($"The {counter}{suffix} value of the array is: {arrNumbers[counter]}");
+            }
             Console.ReadLine();
         }
 
