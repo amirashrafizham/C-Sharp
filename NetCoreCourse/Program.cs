@@ -6,31 +6,40 @@ namespace NetCoreCourse
     {
         private static void Main(string[] args)
         {
-            int actual = 5;
-            GuessNumber(actual);
+            double count = 1;
+            double end = 3;
+            double actual = 5;
+            GuessNumber(count, end, actual);
             Console.ReadLine();
         }
 
-        private static void GuessNumber(int actual)
+        private static void GuessNumber(double count, double end, double actual)
         {
             string answer;
-            int guess;
-            do
+            double guess;
+            while (count <= end)
             {
                 Console.Write("Guess a number: ");
-                guess = Convert.ToInt32(Console.ReadLine());
+                guess = Convert.ToDouble(Console.ReadLine());
                 if (guess == actual)
                 {
                     answer = "You are correct";
                     Console.WriteLine(answer);
-                    break; 
+                    break;
                 }
                 else
                 {
-                    answer = "Try again";
+                    if (end - count == 0)
+                    {
+                        answer = $"You have run out of tries";
+                        Console.WriteLine(answer);
+                        break;
+                    }
+                    answer = $"Try again. You have {end - count} guesses remaining";
                     Console.WriteLine(answer);
+                    count++;
                 }
-            } while (guess != actual);
+            }
         }
     }
 }
