@@ -6,19 +6,27 @@ namespace NetCoreCourse
     {
         private static void Main(string[] args)
         {
+            int baseNumber;
+            int powerNumber;
+
+
+            Console.Write("Provide your base number: ");
+            baseNumber = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Provide the power: ");
+            powerNumber = Convert.ToInt32(Console.ReadLine());
+
+
+            ExponentMethod(baseNumber, powerNumber);
+        }
+        private static void ExponentMethod(int baseNumber, int powerNumber)
+        {
             int counter;
-            int numInput;
-            string message;
-            Console.Write("How many times do you want to loop? ");
-            numInput = Convert.ToInt32(Console.ReadLine()); 
-            
-            for (counter = 0; counter<numInput; counter++) {
-
-                message = (counter % 2 == 0) ? "even number" : "odd number";
-                Console.WriteLine($"The loop is currently at {counter} and it is an {message}");
+            int result = 1;
+            for (counter = 0; counter<powerNumber; counter++)
+            {
+                result = result * baseNumber; 
             }
-
-            Console.ReadLine();
+            Console.WriteLine($"{baseNumber} to the power of {powerNumber} is {result}");
         }
     }
 }

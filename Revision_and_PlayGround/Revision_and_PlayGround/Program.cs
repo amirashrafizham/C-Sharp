@@ -2,22 +2,48 @@
 
 namespace Revision_and_PlayGround
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.Write("How many times do you want to loop: ");
-            int numLoop;
-            numLoop = Convert.ToInt32(Console.ReadLine());
-            int Counter;
-            string message;
-            for (Counter = 0; Counter < numLoop; Counter++)
+            int actualNumber;
+            int guessNumber;
+            int loopNumber = 3;
+            int min = 0;
+            int max = 5;
+            int counter;
+            Random rd = new Random();
+            actualNumber = rd.Next(min, max);
+            Console.WriteLine("The actual number is " + actualNumber);
+
+            for (counter = 0; counter < loopNumber; counter++)
             {
-                message = Counter % 2 == 0 ? "Even" : "Odd";
-                
-                Console.WriteLine($"Now the loop is at : {Counter}, and the number is {message}");
+                Console.Write("Pick a number between 1-5: ");
+                guessNumber = Convert.ToInt32(Console.ReadLine());
+
+                if (guessNumber == actualNumber)
+                {
+                    Console.WriteLine("Correct!");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Wrong!");
+                }
             }
+
             Console.ReadLine();
+
+            // Console.Write($"{numberGuessing(guessNumber, actualNumber)}. The actual number is {actualNumber}  ");
         }
+
+        /*
+                private static string numberGuessing(int guessNumber, int actualNumber)
+                {
+                    string message;
+                    message = (guessNumber == actualNumber) ? "Equals" : "Not Equals";
+                    return message;
+                }
+        */
     }
 }
