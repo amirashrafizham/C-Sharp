@@ -1,32 +1,41 @@
 ﻿using System;
-
 namespace NetCoreCourse
 {
     internal class Program
     {
         private static void Main(string[] args)
+
         {
-            int baseNumber;
-            int powerNumber;
+            //  This is to define the numer and size of array
+            //  private int[,] myArray = new int[2, 3];
 
 
-            Console.Write("Provide your base number: ");
-            baseNumber = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Provide the power: ");
-            powerNumber = Convert.ToInt32(Console.ReadLine());
+            string[,] array = new string[2, 3];
+            array[0, 0] = "One";
+            array[0, 1] = "Two";
+            array[0, 2] = "Three";
+            array[1, 0] = "Four";
+            array[1, 1] = "Five";
+            array[1, 2] = "Six";
 
+            Console.WriteLine($"The number of rows is : {array.GetUpperBound(0)+1}");
+            Console.WriteLine($"The number of columns is : {array.GetUpperBound(1)+1}");
 
-            ExponentMethod(baseNumber, powerNumber);
-        }
-        private static void ExponentMethod(int baseNumber, int powerNumber)
-        {
-            int counter;
-            int result = 1;
-            for (counter = 0; counter<powerNumber; counter++)
+            int counter1;
+            int counter2;
+            for (counter1 = 0; counter1 <= array.GetUpperBound(0); counter1++)
             {
-                result = result * baseNumber; 
+                for(counter2 = 0; counter2 <= array.GetUpperBound(1); counter2++)
+                {
+                    Console.WriteLine($"The value of array({counter1},{counter2}) is {array[counter1, counter2]}");
+                }
             }
-            Console.WriteLine($"{baseNumber} to the power of {powerNumber} is {result}");
         }
+
     }
 }
+
+/*
+    |one  |two  |three|
+    |four |five |six  |
+*/
