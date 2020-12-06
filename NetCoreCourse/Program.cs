@@ -7,27 +7,19 @@ namespace NetCoreCourse
         private static void Main(string[] args)
 
         {
-            try
-            {
-                Console.Write("Enter a number: ");
-                int num1 = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Enter another number: ");
-                int num2 = Convert.ToInt32(Console.ReadLine());
-                //What happens when you divide it by zero? You will get an error right?
-                //What happens if you don't put a number as well?
-                Console.WriteLine(num1 / num2);
-            }
-            catch(DivideByZeroException e)
-            {
-                //Instead of breaking the program, we will write the error
-                Console.WriteLine(e.Message);
-            }
-            catch(FormatException e)
-            {
-                //Instead of breaking the program, we will write the error
-                Console.WriteLine(e.Message);
-            }
-           Console.ReadLine();
+            Book book1 = new Book();
+            book1.title = "Harry Potter";
+            book1.author = "J.K. Rowling";
+            book1.pages = 400;
+
+            Book book2 = new Book();
+            book2.title = "Lord of the Rings";
+            book2.author = "Tolkien";
+            book2.pages = 700;
+            Console.WriteLine($"The author of {book1.title} is {book1.author} and it has {book1.pages} pages" );
+            Console.WriteLine($"The author of {book2.title} is {book2.author} and it has {book2.pages} pages" );
+
+            Console.ReadLine();
         }
     }
 }
