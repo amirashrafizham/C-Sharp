@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace NetCoreCourse
 {
     internal class Program
@@ -6,36 +7,27 @@ namespace NetCoreCourse
         private static void Main(string[] args)
 
         {
-            //  This is to define the numer and size of array
-            //  private int[,] myArray = new int[2, 3];
-
-
-            string[,] array = new string[2, 3];
-            array[0, 0] = "One";
-            array[0, 1] = "Two";
-            array[0, 2] = "Three";
-            array[1, 0] = "Four";
-            array[1, 1] = "Five";
-            array[1, 2] = "Six";
-
-            Console.WriteLine($"The number of rows is : {array.GetUpperBound(0)+1}");
-            Console.WriteLine($"The number of columns is : {array.GetUpperBound(1)+1}");
-
-            int counter1;
-            int counter2;
-            for (counter1 = 0; counter1 <= array.GetUpperBound(0); counter1++)
+            try
             {
-                for(counter2 = 0; counter2 <= array.GetUpperBound(1); counter2++)
-                {
-                    Console.WriteLine($"The value of array({counter1},{counter2}) is {array[counter1, counter2]}");
-                }
+                Console.Write("Enter a number: ");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter another number: ");
+                int num2 = Convert.ToInt32(Console.ReadLine());
+                //What happens when you divide it by zero? You will get an error right?
+                //What happens if you don't put a number as well?
+                Console.WriteLine(num1 / num2);
             }
+            catch(DivideByZeroException e)
+            {
+                //Instead of breaking the program, we will write the error
+                Console.WriteLine(e.Message);
+            }
+            catch(FormatException e)
+            {
+                //Instead of breaking the program, we will write the error
+                Console.WriteLine(e.Message);
+            }
+           Console.ReadLine();
         }
-
     }
 }
-
-/*
-    |one  |two  |three|
-    |four |five |six  |
-*/
