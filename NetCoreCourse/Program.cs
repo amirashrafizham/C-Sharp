@@ -7,13 +7,11 @@ namespace NetCoreCourse
         private static void Main(string[] args)
 
         {
-            Book book1 = new Book("Harry Potter","J.K. Rowling",400);
+            Student student1 = new Student("Jim", "Business", 2.8);
+            Student student2 = new Student("Pam", "Art", 3.6);
 
-            Book book2 = new Book("Lord of the Rings","Tolkien",700);
-
-            Console.WriteLine($"The author of {book1.title} is {book1.author} and it has {book1.pages} pages" );
-            Console.WriteLine($"The author of {book2.title} is {book2.author} and it has {book2.pages} pages" );
-
+            Console.WriteLine(student1.HasHonors());
+            Console.WriteLine(student2.HasHonors());
             Console.ReadLine();
         }
     }
