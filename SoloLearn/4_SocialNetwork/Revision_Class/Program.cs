@@ -12,8 +12,11 @@ namespace Revision_Class
             Student student1 = new Student("Amir","Mechanical Engineering",3.5);
             Student student2 = new Student("Ashraf","Software Engineering",3.0);
 
-            Console.WriteLine(student1.HasHonors());
-            Console.WriteLine(student2.HasHonors());
+            Movie movie1 = new Movie("The Avengers","Joss Whedon","PG-13");
+            Movie movie2 = new Movie("Shrek","Adam Adamson","PG");
+
+            Console.WriteLine(movie1.title);
+            Console.WriteLine(movie2.title);
             Console.ReadLine();
 
         }
