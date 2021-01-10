@@ -18,8 +18,17 @@ namespace Revision_Class
             Song song1 = new Song("Holiday", "Green Day", 200);
             Song song2 = new Song("Kashmir", "Led Zeppelin", 150);
 
-            UsefulTools.sayHi("Amir");
+            //UsefulTools.sayHi("Amir");
 
+            Chef chef = new Chef();
+            chef.MakeChicken();
+
+            ItalianChef chefItalian = new ItalianChef();
+            chefItalian.MakeChicken();
+            chefItalian.MakePasta();
+
+            chef.MakeSpecialDish();
+            chefItalian.MakeSpecialDish();
             Console.ReadLine();
 
         }
