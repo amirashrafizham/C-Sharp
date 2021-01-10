@@ -15,7 +15,7 @@ namespace Revision_Class
             Movie movie1 = new Movie("The Avengers","Joss Whedon","PG-13");
             Movie movie2 = new Movie("Shrek","Adam Adamson","PG");
 
-            Console.WriteLine(movie1.title);
+            Console.WriteLine(movie1.Rating);
             Console.WriteLine(movie2.title);
             Console.ReadLine();
 
