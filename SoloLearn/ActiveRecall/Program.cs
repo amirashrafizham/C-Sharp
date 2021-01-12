@@ -6,20 +6,13 @@ namespace ActiveRecall
     {
         static void Main(string[] args)
         {
-            int[] array1 = new int[10];
-            for (int i = 0; i < 10; i++)
-            {
-                array1[i] = i + 2;
-                Console.WriteLine(array1[i]);
-            }
-            int mulArray = 1;
+            Book book2 = new Book("Models", "Mark Manson", 300);
+            Book book3 = new Book("How to Win Friends and Influence People", "Dale Carnegie", 150);
 
-            for (int i = 0; i < array1.Length; i++)
-            {
-                mulArray = mulArray * array1[i];
-            }
-            Console.WriteLine($"The sum of all array elements is {array1.Sum()}");
-            Console.WriteLine($"The multiplication  of all array elements is {mulArray}");
+            Student student1 = new Student("Amir", "Mechanical Engineering", 3.5);
+            Student student2 = new Student("Ashraf", "Software Engineering", 3.3);
+            Console.WriteLine($"{student1.name} graduated in {student1.course} with a CGPA of {student1.marks} {student1.getMarks()}");
+            Console.WriteLine($"{student2.name} graduated in {student2.course} with a CGPA of {student2.marks} {student2.getMarks()}");
             Console.ReadLine();
         }
     }
