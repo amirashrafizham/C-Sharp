@@ -16,7 +16,7 @@ namespace ActiveRecall
         }
         public string getMarks()
         {
-            if (marks > 3.5)
+            if (marks >= 3.5)
             {
                 return $"with honors";
             }

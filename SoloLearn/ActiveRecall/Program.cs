@@ -11,8 +11,9 @@ namespace ActiveRecall
 
             Student student1 = new Student("Amir", "Mechanical Engineering", 3.5);
             Student student2 = new Student("Ashraf", "Software Engineering", 3.3);
-            Console.WriteLine($"{student1.name} graduated in {student1.course} with a CGPA of {student1.marks} {student1.getMarks()}");
-            Console.WriteLine($"{student2.name} graduated in {student2.course} with a CGPA of {student2.marks} {student2.getMarks()}");
+
+            Movie movie1 = new Movie("Avengers", "Amir", "PG-13"); 
+            Movie movie2 = new Movie("LOTR", "Ashraf", "18-SX"); 
             Console.ReadLine();
         }
     }
