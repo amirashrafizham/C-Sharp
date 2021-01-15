@@ -8,7 +8,7 @@ namespace StaticMembers
 
         public int age;
         private string biome;
-        private static int forestsCreated = 0;
+        private static int forestsCreated;
         // CONSTRUCTORS
 
         public Forest(string aName, string aBiome)
@@ -16,7 +16,7 @@ namespace StaticMembers
             this.Name = aName;
             this.Biome = aBiome;
             Age = 0;
-            ForestsCreated += 1; 
+            ForestsCreated += 1;
         }
 
         public Forest(string name) : this(name, "Unknown")
@@ -72,8 +72,25 @@ namespace StaticMembers
 
         public static int ForestsCreated
         {
-            get {return forestsCreated;} 
-            private set {forestsCreated = value;}
+            get { return forestsCreated; }
+            private set { forestsCreated = value; }
+        }
+
+        private static string treeFacts;
+        public static string TreeFacts
+        {
+            get { return treeFacts; }
+        }
+
+        public static void PrintTreeFacts()
+        {
+            Console.WriteLine(TreeFacts);
+        }
+
+        static Forest()
+        {
+            treeFacts = "Forests provide a diversity of ecosystem services including:\r\n  aiding in regulating climate.\r\n  purifying water.\r\n  mitigating natural hazards such as floods.\n";
+            ForestsCreated = 0;
         }
     }
 }

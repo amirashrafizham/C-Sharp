@@ -10,6 +10,8 @@ namespace StaticMembers
             Forest forest2 = new Forest("Sahara", "Desert");
 
             Console.WriteLine(Forest.ForestsCreated);
+            Console.WriteLine(Math.PI);
+            Forest.PrintTreeFacts();
         }
     }
 }
