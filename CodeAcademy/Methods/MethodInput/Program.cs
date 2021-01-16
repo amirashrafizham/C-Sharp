@@ -1,0 +1,46 @@
+using System;
+
+namespace MethodInput
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string designer = "Anders Hejlsberg";
+
+            // there's a difference in using .IndexOf ("") and .IndexOf(" "). We want to find the space between Anders and Hejlsberg
+            int indexOfSpace = designer.IndexOf(" ");
+            string secondName = designer.Substring(indexOfSpace);
+
+            VisitPlanets(numberOfPlanets: 3, name: "Amir");
+            NamePets("Laika", "Albert");
+            NamePets("Mango", "Puddy", "Bucket");
+            NamePets();
+            Console.ReadLine();
+        }
+        static void VisitPlanets(
+            string adjective = "brave",
+            string name = "Cosmonaut",
+            int numberOfPlanets = 0,
+            double gForce = 4.2)
+        {
+            Console.WriteLine($"Welcome back, {adjective} {name}.");
+            Console.WriteLine($"You visited {numberOfPlanets} new planets...");
+            Console.WriteLine($"...while experiencing a g-force of {gForce} g!");
+        }
+        //Method overloading example
+        static void NamePets(string pet1, string pet2)
+        {
+            Console.WriteLine($"Your pets {pet1} and {pet2} will be joining your voyage across space");
+        }
+        static void NamePets(string pet1, string pet2, string pet3)
+        {
+            Console.WriteLine($"Your pets {pet1}, {pet2}, {pet3} will be joining your voyage across space");
+        }
+        static void NamePets()
+        {
+            Console.WriteLine($"Aw, you have no spacefaring pets :(");
+        }
+
+    }
+}
