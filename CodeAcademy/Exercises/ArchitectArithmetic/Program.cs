@@ -21,7 +21,5 @@ namespace ArchitectArithmetic
         public static double rectangle(double length, double width) => length * width;
         public static double circle(double radius) => Math.PI * Math.Pow(radius, 2);
         public static double triangle(double baseLength, double heightLength) => 0.5 * baseLength * heightLength;
-
-
     }
 }

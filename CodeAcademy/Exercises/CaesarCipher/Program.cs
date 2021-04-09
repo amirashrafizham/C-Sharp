@@ -11,52 +11,105 @@ namespace CaesarCipher
             Console.WriteLine("------------------------------------");
             Console.WriteLine("\n ");
 
-            //We now get the password from the user
-            Console.Write("Type a password to encrypt: ");
-            string password = Console.ReadLine();
-            char[] original = password.ToCharArray();
+            //ask user whether to encrypt or decrypt
+            Console.Write("Select Encrypt or Decrypt: ");
+            string answer = Console.ReadLine().ToLower();
 
-            //We no retrieve the key
-            Console.Write("What is the key: ");
-            int key = Convert.ToInt32(Console.ReadLine());
-
-            //We create an array to store char into numeric
-            int[] storeNumeric = new int[original.Length];
-
-            //We create an array to store the computed numeric alphabets
-            char[] encrypt = new char[original.Length];
-
-            //Generating the encryption
-            for (int i = 0; i < original.Length; i++)
+            switch (answer)
             {
-                storeNumeric[i] = (int)original[i] + key;
-                encrypt[i] = (char)storeNumeric[i];
+                case "encrypt":
+                    Encrypt();
+                    break;
+                case "decrypt":
+                    Decrypt();
+                    break;
+                default:
+                    Console.WriteLine("You did not select anything");
+                    break;
             }
-            //Displaying the encrypted password
-            string encryptString = String.Join("", encrypt);
-            Console.WriteLine($"The Encrypted Password is : {encryptString}");
-
-            Console.Write("Would you like to decrypt the password [yes/no]: ");
-            string answer = Console.ReadLine();
-
-            if (answer.ToLower() == "yes")
+            static void Encrypt()
             {
+                char[] alphabet = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 
-                //Decrypting the encrypted password
-                for (int i = 0; i < encrypt.Length; i++)
+                Console.Write("Please type password to encrypt: ");
+                string password = Console.ReadLine().ToLower();
+
+                Console.Write("Please type your key: ");
+                int key = Convert.ToInt32(Console.ReadLine());
+
+                char[] passArray = password.ToCharArray(); //to separate string into character array
+                char[] newArray = new char[password.Length]; //to store encrypted password in an array
+
+                for (int i = 0; i < passArray.Length; i++)
                 {
-                    storeNumeric[i] = (int)encrypt[i] - key;
-                    original[i] = (char)storeNumeric[i];
-                }
-                //Displaying the decrypted password
-                string decryptString = String.Join("", original);
-                Console.WriteLine($"The Decrypted Password is : {decryptString}");
+                    char newChar;
+                    int getIndex = Array.IndexOf(alphabet, passArray[i]);
+                    if (getIndex == -1)
+                    {
+                        newArray[i] = passArray[i];
+                    }
+                    else
+                    {
+                        int newIndex = getIndex + key;
 
+                        if (newIndex > 26)
+                        {
+                            newChar = alphabet[newIndex - 26];
+                        }
+                        else
+                        {
+                            newChar = alphabet[getIndex + key];
+                        }
+                        newArray[i] = newChar;
+                    }
+                }
+
+                string newPassword = String.Join("", newArray);
+                Console.Write($"Your encrypted password is: {newPassword}");
             }
-            else
+
+            static void Decrypt()
             {
-                Console.WriteLine("Thank you and have a great day!");
+                char[] alphabet = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+
+                Console.Write("Please type password to decrypt: ");
+                string password = Console.ReadLine().ToLower();
+
+                Console.Write("Please type your key: ");
+                int key = Convert.ToInt32(Console.ReadLine());
+
+
+                char[] passArray = password.ToCharArray(); //to separate string into character array
+                char[] newArray = new char[password.Length]; //to store encrypted password in an array
+
+                for (int i = 0; i < passArray.Length; i++)
+                {
+                    char newChar;
+                    int getIndex = Array.IndexOf(alphabet, passArray[i]);
+                    if (getIndex == -1)
+                    {
+                        newArray[i] = passArray[i];
+                    }
+                    else
+                    {
+                        int newIndex = getIndex - key;
+
+                        if (newIndex < 0)
+                        {
+                            newChar = alphabet[newIndex + 26];
+                        }
+                        else
+                        {
+                            newChar = alphabet[getIndex - key];
+                        }
+                        newArray[i] = newChar;
+                    }
+                }
+
+                string newPassword = String.Join("", newArray);
+                Console.Write($"Your decrypted password is: {newPassword}");
             }
+
         }
     }
 }
