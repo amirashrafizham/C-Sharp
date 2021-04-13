@@ -1,0 +1,102 @@
+﻿@page
+@model IndexModel
+@{
+    string firstName = "Amir";
+    int age = 27;
+    string stopLight = "yellow";
+    string grade = "B";
+    List<string> favouriteFoods = new List<string> { "Chicken Chop", "Fried Rice", "Wagyu Steak", "Double Cheese Burger" };
+}
+
+<br>
+<div class="text-center">
+    <h1 class="display-4">Let's work with some conditionals</h1>
+    <br>
+    <h2 class="user-info">IF ELSE
+    </h2>
+
+    @if (stopLight == "green")
+    {
+        <h5>The stoplight is green, go!</h5>
+    }
+    else if (stopLight == "red")
+    {
+
+        <h5>The stoplight is red, go!</h5>
+    }
+    else if (stopLight == "yellow")
+    {
+
+        <h5>The stoplight is yellow, slow down!</h5>
+    }
+    else
+    {
+        <h5>The stoplight doesn't exist</h5>
+    }
+</div>
+
+<br>
+<br>
+<div class="text-center">
+    <h2 class="user-info"> SWITCH </h2>
+    @switch (grade)
+    {
+        case "A":
+            <h4>Excellent job!</h4>
+            break;
+        case "B":
+            <h4>Well done!</h4>
+            break;
+        case "C":
+            <h4>Needs some work!</h4>
+            break;
+        case "D":
+            <h4>You passed</h4>
+            break;
+        case "F":
+            <h4>You failed, better try next time</h4>
+            break;
+        default:
+            <h4>Invalid grade</h4>
+            break;
+    }
+    <h3>Your grade is: @grade</h3>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="text-center">
+    <h1 class="display-4">Let's work loops</h1>
+    <br>
+    <h4>Results from your for loop:</h4>
+    <ul>
+        @for (int i = 0; i < favouriteFoods.Count; i++)
+        {
+            <li>@favouriteFoods[i]</li>
+        }
+    </ul>
+    <br>
+    <h4>Results from your foreach loop:</h4>
+    <ul>
+        @foreach (string item in favouriteFoods)
+        {
+            <li>@item</li>
+        }
+    </ul>
+    <br>
+    <h4>Results from your while loop:</h4>
+    <ul>
+        @{
+            int counter = 0;
+        }
+        @while (counter < favouriteFoods.Count)
+        {
+            <li>@favouriteFoods[counter]</li>
+            counter++;
+        }
+    </ul>
+</div>
