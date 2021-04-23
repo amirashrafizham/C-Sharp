@@ -1,0 +1,42 @@
+@page
+<!-- Projects.cshtml -->
+
+<!-- Add model directive below -->
+@model ProjectsModel
+
+@{
+    // Add ViewData Title below
+    ViewData["Title"] = "Projects";
+}
+
+<div class="jumbotron jumbotron-fluid jumbotron-container text-white project-jumbotron">
+    <div class="container-fluid jumbotron-content">
+        <p class="text-center mb-4 jumbotron-header">Projects</p>
+    </div>
+</div>
+
+@foreach (var item in @Model.Projects)
+{
+    <div class="container">
+        <div class="project-container">
+            <h4 class="project-title general-header">
+                <!--  Project Title -->
+            @item.Title
+            </h4>
+            <p class="project-year general-header">
+                <!--  Project Year -->
+            @item.Year
+            </p>
+            <p class="project-description general-content">
+                <!--  Project Description -->
+            @item.Description
+            </p>
+        </div>
+
+        <p class="general-content">
+            <!-- Render partial for Link below -->
+        <partial name="_Links" for="@Model.GithubUsername" />
+        </p>
+        <br>
+    </div>
+}
