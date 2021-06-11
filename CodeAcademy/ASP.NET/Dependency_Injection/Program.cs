@@ -7,8 +7,13 @@ namespace Dependency_Injection
         static void Main(string[] args)
         {
             Console.WriteLine("Using trainer: ");
-            Trainer trainer = new Trainer(new QuietSpeaker());
-            trainer.BeginTraining();
+            Trainer trainerLoud = new Trainer(new LoudSpeaker());
+            trainerLoud.BeginTraining();
+            Console.Write("\n");
+            Console.WriteLine("Using trainer: ");
+            Trainer trainerQuiet = new Trainer(new QuietSpeaker());
+            trainerQuiet.BeginTraining();
+
         }
     }
 }
