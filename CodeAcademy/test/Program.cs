@@ -7,6 +7,7 @@ namespace test
         static void Main(string[] args)
         {
             DumbellCalculator();
+            Console.WriteLine("Hello world");
         }
 
         static void Calculator(int num1, int num2)
